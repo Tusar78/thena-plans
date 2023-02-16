@@ -381,7 +381,7 @@ body {
 }
 
 .rs-scale {
-  display: none;
+  opacity: 0;
 }
 
 @media screen and (max-width: 991.98px) {

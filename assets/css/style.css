@@ -306,6 +306,7 @@ body {
 .slider__track.track-one {
   left: 0;
   top: 5px;
+  z-index: 1;
 }
 
 .slider__track.track-two {

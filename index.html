@@ -335,11 +335,15 @@
               const standardCard = document.querySelectorAll(
                 ".table__card--standard"
               );
+              const btnChanger = document.querySelector(".card__btn--outline");
               cardDollar.textContent = +val * 5;
               standardCard[0].style.filter = "grayscale(0)";
               standardCard[0].style.opacity = "1";
               standardCard[1].style.filter = "grayscale(0)";
               standardCard[1].style.opacity = "1";
+              btnChanger.style.border = "2px solid #1b1e35";
+              btnChanger.style.backgroundColor = "#fff";
+              btnChanger.style.color = "#1b1e35";
               if (val == 0) {
                 myTooltip.textContent = `Total ${+val + 10} Channels`;
                 myTooltip.style.width = "max-content";
@@ -355,6 +359,9 @@
                 standardCard[0].style.opacity = "0.5";
                 standardCard[1].style.filter = "grayscale(1)";
                 standardCard[1].style.opacity = "0.5";
+                btnChanger.style.border = 0;
+                btnChanger.style.backgroundColor = "#7A00FF";
+                btnChanger.style.color = "#fff";
               } else {
                 myTooltip.textContent = `Total ${+val} Channels`;
                 myTooltip.style.width = "max-content";

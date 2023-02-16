@@ -388,6 +388,18 @@ body {
   opacity: 0;
 }
 
+.main_range {
+  position: relative;
+}
+
+.range__scale {
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  z-index: -1;
+}
+
 @media screen and (max-width: 991.98px) {
   .table__cards {
     display: grid;

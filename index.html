@@ -42,7 +42,7 @@
                     <span class="switch__off">Monthly</span>
                   </div>
                 </div>
-                <div class="table__card">
+                <div class="table__card table__card--standard">
                   <div class="card__head">
                     <div class="card__title-wrap">
                       <h2 class="card__title">Free Forever</h2>
@@ -56,7 +56,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="table__card">
+                <div class="table__card table__card--standard">
                   <div class="card__head">
                     <div class="card__title-wrap">
                       <h2 class="card__title">Team</h2>
@@ -66,7 +66,9 @@
                       <span class="card__money">$5</span>
                       <span class="card__money-attribute">Channel/month</span>
                     </div>
-                    <p class="card__total">Total $50/month</p>
+                    <p class="card__total">
+                      Total $<span class="card--dollar">50</span>/month
+                    </p>
                   </div>
                   <div class="card__footer">
                     <button type="button" class="card__btn">Free To Try</button>
@@ -329,19 +331,27 @@
             tooltip: true,
             onChange: function (val) {
               const myTooltip = document.querySelector(".rs-tooltip");
-              console.log(this.values);
+              const cardDollar = document.querySelector(".card--dollar");
+              const standardCard = document.querySelectorAll(".table__card--standard");
+              cardDollar.textContent = +val * 5;
               if (val == 0) {
-                myTooltip.innerText = `Total ${+val + 10} Channels`;
-                myTooltip.style.width = 'max-content';
+                myTooltip.textContent = `Total ${+val + 10} Channels`;
+                myTooltip.style.width = "max-content";
+                cardDollar.textContent = '50';
               } else if (val == 100) {
-                myTooltip.innerText = `Total ${+val} Channels`;
-                myTooltip.style.width = 'max-content';
+                myTooltip.textContent = `Total ${+val} Channels`;
+                myTooltip.style.width = "max-content";
               } else if (val == 200) {
-                myTooltip.innerText = `Total ${+val - 50}+ Channels`;
-                myTooltip.style.width = 'max-content';
+                myTooltip.textContent = `Total ${+val - 50}+ Channels`;
+                myTooltip.style.width = "max-content";
+                cardDollar.textContent = '750';
+                standardCard[0].style.filter = 'grayscale(1)';
+                standardCard[0].style.opacity = '0.5';
+                standardCard[1].style.filter = 'grayscale(1)';
+                standardCard[1].style.opacity = '0.5';
               } else {
-                myTooltip.innerText = `Total ${+val} Channels`;
-                myTooltip.style.width = 'max-content';
+                myTooltip.textContent = `Total ${+val} Channels`;
+                myTooltip.style.width = "max-content";
               }
               console.log(val);
             },

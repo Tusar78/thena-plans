@@ -343,6 +343,7 @@ body {
   border: 0;
   height: 8px;
   border-radius: 37px;
+  cursor: pointer;
 }
 
 .rs-container .rs-selected {
@@ -350,6 +351,7 @@ body {
   border: 0;
   height: 8px;
   border-radius: 37px;
+  cursor: pointer;
 }
 
 .rs-tooltip {

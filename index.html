@@ -329,18 +329,19 @@
             tooltip: true,
             onChange: function (val) {
               const myTooltip = document.querySelector(".rs-tooltip");
+              console.log(this.values);
               if (val == 0) {
                 myTooltip.innerText = `Total ${+val + 10} Channels`;
-                myTooltip.style.width = '163px';
+                myTooltip.style.width = 'max-content';
               } else if (val == 100) {
                 myTooltip.innerText = `Total ${+val} Channels`;
-                myTooltip.style.width = '180px';
+                myTooltip.style.width = 'max-content';
               } else if (val == 200) {
                 myTooltip.innerText = `Total ${+val - 50}+ Channels`;
-                myTooltip.style.width = '180px';
+                myTooltip.style.width = 'max-content';
               } else {
-                myTooltip.style.width = '180px';
                 myTooltip.innerText = `Total ${+val} Channels`;
+                myTooltip.style.width = 'max-content';
               }
               console.log(val);
             },

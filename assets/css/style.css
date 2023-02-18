@@ -84,6 +84,7 @@ body {
   height: 8px;
   background: #eee;
   border-radius: 10px;
+  outline: none;
 }
 
 .slider__range::-webkit-slider-thumb {
@@ -100,6 +101,7 @@ body {
   z-index: 3;
   position: relative;
   border: none;
+  outline: none;
 }
 
 .slider__range::-moz-slider-thumb {

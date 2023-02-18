@@ -4,36 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Table</title>
-
-    <!-- =-= Attached Range Slider =-=  -->
-    <link rel="stylesheet" href="./assets/css/rSlider.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
   </head>
   <body>
     <main class="main">
       <section class="slider-section">
-        <div class="container">
+        <div class="slider__container">
           <div class="slider__content">
-            <div class="slider__heading">
+            <div class="slider__header">
               <h2 class="slider__title">Compare the plans and find yours</h2>
               <p class="slider__text">
                 Simple, transparent pricing that grows with you
               </p>
             </div>
             <div class="slider__body">
-              <div class="slider__track track-one"></div>
-              <div class="main_range">
-                <input type="text" id="slider" class="slider" />
-                <div class="range__scale">
-                  <img src="./assets/images/scale.svg" alt="Scale Img">
-                </div>
-              </div>
-              <div class="slider__track track-two"></div>
+              <input
+                class="slider__range"
+                type="range"
+                min="0"
+                step="50"
+                max="200"
+                value="0"
+                id="myRange"
+              />
+              <div class="progress"></div>
+              <div class="tooltip" id="myTooltip">Total 10 Channels</div>
             </div>
           </div>
         </div>
       </section>
+
       <section class="table">
         <div class="container">
           <div class="table__content">
@@ -317,64 +318,6 @@
         </div>
       </section>
     </main>
-
-    <script src="./assets/js/rSlider.min.js"></script>
-    <script>
-      (function () {
-        "use strict";
-        var init = function () {
-          var slider = new rSlider({
-            target: "#slider",
-            values: { min: 0, max: 200 },
-            step: 50,
-            range: false,
-            set: [0],
-            scale: true,
-            labels: false,
-            tooltip: true,
-            onChange: function (val) {
-              const myTooltip = document.querySelector(".rs-tooltip");
-              const cardDollar = document.querySelector(".card--dollar");
-              const standardCard = document.querySelectorAll(
-                ".table__card--standard"
-              );
-              const btnChanger = document.querySelector(".card__btn--outline");
-              cardDollar.textContent = +val * 5;
-              standardCard[0].style.filter = "grayscale(0)";
-              standardCard[0].style.opacity = "1";
-              standardCard[1].style.filter = "grayscale(0)";
-              standardCard[1].style.opacity = "1";
-              btnChanger.style.border = "2px solid #1b1e35";
-              btnChanger.style.backgroundColor = "#fff";
-              btnChanger.style.color = "#1b1e35";
-              if (val == 0) {
-                myTooltip.textContent = `Total ${+val + 10} Channels`;
-                myTooltip.style.width = "max-content";
-                cardDollar.textContent = "50";
-              } else if (val == 100) {
-                myTooltip.textContent = `Total ${+val} Channels`;
-                myTooltip.style.width = "max-content";
-              } else if (val == 200) {
-                myTooltip.textContent = `Total ${+val - 50}+ Channels`;
-                myTooltip.style.width = "max-content";
-                cardDollar.textContent = "750";
-                standardCard[0].style.filter = "grayscale(1)";
-                standardCard[0].style.opacity = "0.5";
-                standardCard[1].style.filter = "grayscale(1)";
-                standardCard[1].style.opacity = "0.5";
-                btnChanger.style.border = 0;
-                btnChanger.style.backgroundColor = "#7A00FF";
-                btnChanger.style.color = "#fff";
-              } else {
-                myTooltip.textContent = `Total ${+val} Channels`;
-                myTooltip.style.width = "max-content";
-              }
-              console.log(val);
-            },
-          });
-        };
-        window.onload = init;
-      })();
-    </script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>

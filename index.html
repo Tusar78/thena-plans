@@ -19,22 +19,32 @@
               </p>
             </div>
             <div class="slider__body">
-              <input
-                class="slider__range"
-                type="range"
-                min="0"
-                step="50"
-                max="200"
-                value="0"
-                id="myRange"
-              />
-              <div class="progress"></div>
-              <div class="tooltip" id="myTooltip">Total 10 Channels</div>
+              <div class="slider__track track-one"></div>
+              <div>
+                <input
+                  class="slider__range"
+                  type="range"
+                  min="0"
+                  step="50"
+                  max="200"
+                  value="0"
+                  id="myRange"
+                />
+                <div class="progress"></div>
+                <div class="tooltip" id="myTooltip">Total 10 Channels</div>
+              </div>
+              <div class="slider__track track-two"></div>
+              <div class="scale">
+                <img
+                  class="scale__img"
+                  src="./assets/images/scale.svg"
+                  alt="Scale Image"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <section class="table">
         <div class="container">
           <div class="table__content">
@@ -75,12 +85,18 @@
                     </p>
                   </div>
                   <div class="card__footer">
-                    <button type="button" class="card__btn">Free To Try</button>
+                    <button
+                      type="button"
+                      class="card__btn card__btn--interactive"
+                    >
+                      Free To Try
+                    </button>
                     <p class="card__text">
                       Manage all of your customer communication in Slack
                     </p>
                   </div>
                 </div>
+
                 <div class="table__card">
                   <div class="card__head">
                     <div class="card__title-wrap">
